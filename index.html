@@ -8,35 +8,33 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Distracted | Band uit Arnhem</title>
+  <title>Distracted | Funk, Soul, Pop & Rock uit Arnhem</title>
 
   <meta name="description"
-    content="Distracted is een jonge band uit Arnhem met eigen nummers en een moderne mix van funk, soul, pop en rock. Boek de band voor festivals, podia en evenementen.">
+    content="Distracted is een jonge band uit Arnhem met eigen nummers en een moderne mix van funk, soul, pop en rock. Voor festivals, podia en evenementen.">
 
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#f1e9d8">
+  <meta name="theme-color" content="#e9f0e8">
 
-  <!-- Add canonical URL when your domain is ready -->
-  <!--
-  <link rel="canonical" href="https://www.yourdomain.nl/">
-  -->
+  <!-- Modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="nl_NL">
-  <meta property="og:title" content="Distracted | Band uit Arnhem">
-  <meta property="og:description"
-    content="Eigen nummers. Funk, soul, pop en rock. Uit Arnhem.">
-
-  <!-- Add actual image URL after domain setup -->
-  <!--
-  <meta property="og:image"
-    content="https://www.yourdomain.nl/images/distracted-01.jpg">
-  -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
   <script src="script.js" defer></script>
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:title" content="Distracted | Band uit Arnhem">
+  <meta property="og:description"
+    content="Eigen nummers. Funk, soul, pop en rock.">
+
+  <!-- Add your domain and social image when available -->
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -45,13 +43,22 @@
     "@type": "MusicGroup",
     "name": "Distracted",
     "description": "Jonge band uit Arnhem met eigen nummers en invloeden uit funk, soul, pop en rock.",
-    "genre": ["Funk", "Soul", "Pop", "Rock"],
+    "genre": [
+      "Funk",
+      "Soul",
+      "Pop",
+      "Rock"
+    ],
     "foundingLocation": {
       "@type": "City",
       "name": "Arnhem",
       "containedInPlace": {
         "@type": "AdministrativeArea",
-        "name": "Gelderland"
+        "name": "Gelderland",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "Nederland"
+        }
       }
     }
   }
@@ -59,16 +66,19 @@
 
 </head>
 
+
 <body>
+
+  <!-- HEADER -->
 
   <header class="site-header">
 
     <a href="#" class="wordmark" aria-label="Distracted home">
-      DISTRACTED<span>.</span>
+      distracted<span class="wordmark-dot">.</span>
     </a>
 
     <a href="#booking" class="header-link">
-      BOEKING ↗
+      BOEKING
     </a>
 
   </header>
@@ -76,70 +86,79 @@
 
   <main>
 
+    <!-- PHOTO GALLERY -->
+
     <section class="hero" aria-label="Foto's van Distracted">
 
-      <div class="gallery-wrapper">
+      <div class="gallery" id="gallery">
 
-        <button class="gallery-arrow gallery-prev"
-          aria-label="Vorige foto">←</button>
+        <div class="gallery-slide">
 
-        <div class="gallery" id="gallery">
+          <img
+            src="images/distracted-01.jpg"
+            alt="Bandportret van Distracted"
+            class="gallery-image"
+            fetchpriority="high">
 
-          <div class="gallery-slide">
-            <img
-              src="images/distracted-01.jpg"
-              alt="Bandportret van Distracted uit Arnhem"
-              class="gallery-image"
-              fetchpriority="high">
-            <div class="photo-placeholder">
-              <span>01</span>
-            </div>
-          </div>
-
-          <div class="gallery-slide">
-            <img
-              src="images/distracted-02.jpg"
-              alt="Distracted tijdens een live optreden"
-              class="gallery-image">
-            <div class="photo-placeholder">
-              <span>02</span>
-            </div>
-          </div>
-
-          <div class="gallery-slide">
-            <img
-              src="images/distracted-03.jpg"
-              alt="Muzikanten van Distracted"
-              class="gallery-image">
-            <div class="photo-placeholder">
-              <span>03</span>
-            </div>
-          </div>
-
-          <div class="gallery-slide">
-            <img
-              src="images/distracted-04.jpg"
-              alt="Distracted band uit Arnhem"
-              class="gallery-image">
-            <div class="photo-placeholder">
-              <span>04</span>
-            </div>
+          <div class="photo-placeholder">
+            01
           </div>
 
         </div>
 
-        <button class="gallery-arrow gallery-next"
-          aria-label="Volgende foto">→</button>
+
+        <div class="gallery-slide">
+
+          <img
+            src="images/distracted-02.jpg"
+            alt="Distracted tijdens een live optreden"
+            class="gallery-image">
+
+          <div class="photo-placeholder">
+            02
+          </div>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+          <img
+            src="images/distracted-03.jpg"
+            alt="Muzikanten van Distracted"
+            class="gallery-image">
+
+          <div class="photo-placeholder">
+            03
+          </div>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+          <img
+            src="images/distracted-04.jpg"
+            alt="Distracted band uit Arnhem"
+            class="gallery-image">
+
+          <div class="photo-placeholder">
+            04
+          </div>
+
+        </div>
 
       </div>
 
       <div class="gallery-footer">
-        <span>DISTRACTED · ARNHEM</span>
+        <span>DISTRACTED</span>
         <span id="gallery-counter">01 / 04</span>
       </div>
 
     </section>
 
+
+    <!-- ABOUT -->
 
     <section class="about section-padding" id="about">
 
@@ -155,6 +174,7 @@
           </h1>
 
         </div>
+
 
         <div class="about-text">
 
@@ -179,25 +199,29 @@
     </section>
 
 
+    <!-- BOOKING -->
+
     <section class="booking section-padding" id="booking">
 
       <div class="booking-content">
 
         <span class="eyebrow">BOEKING</span>
 
-        <h2>Distracted<span>.</span></h2>
+        <h2>
+          Let's talk<span>.</span>
+        </h2>
 
         <p>
           Interesse in een optreden of samenwerking?
-          Neem contact met ons op.
+          We horen graag van je.
         </p>
-
-        <!-- Replace email address before publishing -->
 
         <a
           href="mailto:YOUR-EMAIL@example.com?subject=Boeking%20Distracted"
           class="booking-button">
-          MAIL ONS ↗
+
+          MAIL ONS
+
         </a>
 
       </div>
@@ -205,12 +229,14 @@
     </section>
 
 
+    <!-- SOCIAL MEDIA -->
+
     <section class="socials section-padding"
       aria-label="Sociale media">
 
       <div class="social-links">
 
-        <!-- Replace Instagram URL before publishing -->
+        <!-- Replace with your actual Instagram profile -->
 
         <a
           href="https://www.instagram.com/YOUR-INSTAGRAM/"
@@ -218,13 +244,12 @@
           rel="noopener noreferrer"
           class="social-link">
 
-          <span>INSTAGRAM</span>
-          <span>↗</span>
+          INSTAGRAM
 
         </a>
 
 
-        <!-- Replace Spotify URL before publishing -->
+        <!-- Replace with your actual Spotify profile -->
 
         <a
           href="https://open.spotify.com/artist/YOUR-SPOTIFY-ID"
@@ -232,8 +257,7 @@
           rel="noopener noreferrer"
           class="social-link">
 
-          <span>SPOTIFY</span>
-          <span>↗</span>
+          SPOTIFY
 
         </a>
 
@@ -244,15 +268,18 @@
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer class="site-footer">
 
-    <a href="#" class="footer-wordmark">DISTRACTED.</a>
-
-    <span>ARNHEM</span>
+    <a href="#" class="footer-wordmark">
+      distracted.
+    </a>
 
     <span>© 2026 DISTRACTED</span>
 
   </footer>
 
 </body>
+
 </html>

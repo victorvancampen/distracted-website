@@ -1,25 +1,38 @@
 
 /* =========================================
    DISTRACTED
-   Minimal retro / modern design
-   Responsive layout
+   Contemporary music / editorial design
    ========================================= */
 
 :root {
-  --cream: #f1e9d8;
-  --olive: #a6a078;
-  --burgundy: #843f42;
-  --charcoal: #252521;
-  --amber: #d19a61;
+  /* COLOUR PALETTE */
 
-  --font-main: Arial, Helvetica, sans-serif;
-  --font-display: "Arial Black", Arial, sans-serif;
+  --background: #e9f0e8;
+  --surface: #dce8dc;
 
-  --page-padding: clamp(18px, 6vw, 90px);
+  --green: #255e4b;
+  --green-light: #a8d5b5;
+
+  --blue: #315ceb;
+  --blue-light: #b9c8ff;
+
+  --dark: #202522;
+  --muted: #626b64;
+  --white: #f7f8f3;
+
+  /* TYPOGRAPHY */
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+
+  /* LAYOUT */
+
+  --page-padding: clamp(20px, 6vw, 90px);
 }
 
+
 /* =========================================
-   RESET & GLOBAL SIZING
+   RESET
    ========================================= */
 
 *,
@@ -43,10 +56,10 @@ body {
 
   overflow-x: clip;
 
-  background: var(--cream);
-  color: var(--charcoal);
+  background: var(--background);
+  color: var(--dark);
 
-  font-family: var(--font-main);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -67,8 +80,7 @@ button {
 h1,
 h2,
 p {
-  max-width: 100%;
-  overflow-wrap: break-word;
+  margin-top: 0;
 }
 
 main,
@@ -86,7 +98,7 @@ footer {
 
 .site-header {
   width: 100%;
-  height: 100px;
+  height: 105px;
 
   padding: 0 var(--page-padding);
 
@@ -99,54 +111,47 @@ footer {
 .wordmark,
 .footer-wordmark {
   font-family: var(--font-display);
-  font-size: clamp(25px, 4vw, 43px);
-  letter-spacing: -0.07em;
-  font-weight: 900;
+  font-size: clamp(32px, 4vw, 49px);
+  font-weight: 800;
+  letter-spacing: -0.09em;
   white-space: nowrap;
+  line-height: 1;
 }
 
-.wordmark span,
-.about-heading h1 span,
-.booking-content h2 span {
-  color: var(--burgundy);
+.wordmark-dot {
+  color: var(--blue);
 }
 
 .header-link {
   flex-shrink: 0;
 
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 1.5px;
-  font-weight: bold;
 
   transition: color 0.2s;
 }
 
 .header-link:hover {
-  color: var(--burgundy);
+  color: var(--blue);
 }
 
 
 /* =========================================
-   HERO / PHOTO GALLERY
+   HERO / GALLERY
    ========================================= */
 
 .hero {
   width: 100%;
   min-width: 0;
 
-  padding: 15px var(--page-padding) 70px;
-}
-
-.gallery-wrapper {
-  position: relative;
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
+  padding: 5px var(--page-padding) 65px;
 }
 
 .gallery {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 
   width: 100%;
   max-width: 100%;
@@ -157,6 +162,7 @@ footer {
 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+
   scrollbar-width: none;
 
   overscroll-behavior-x: contain;
@@ -173,12 +179,12 @@ footer {
   flex: 0 0 100%;
   min-width: 0;
 
-  height: clamp(330px, 58vw, 660px);
+  height: clamp(340px, 57vw, 690px);
 
-  scroll-snap-align: center;
   overflow: hidden;
+  scroll-snap-align: center;
 
-  background: var(--olive);
+  background: var(--green-light);
 }
 
 .gallery-image {
@@ -189,6 +195,8 @@ footer {
   height: 100%;
 
   object-fit: cover;
+  object-position: center;
+
   display: none;
 }
 
@@ -202,7 +210,7 @@ footer {
 
 
 /* =========================================
-   PHOTO PLACEHOLDERS
+   GALLERY PLACEHOLDERS
    ========================================= */
 
 .photo-placeholder {
@@ -213,110 +221,74 @@ footer {
   justify-content: center;
   align-items: center;
 
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--white);
+
   background:
     radial-gradient(
-      circle at 70% 35%,
-      var(--amber) 0,
-      transparent 30%
+      circle at 75% 25%,
+      var(--blue-light),
+      transparent 35%
     ),
     linear-gradient(
       135deg,
-      var(--olive),
-      var(--burgundy)
+      var(--green),
+      var(--blue)
     );
 }
 
 .gallery-slide:nth-child(2) .photo-placeholder {
   background: linear-gradient(
     135deg,
-    var(--charcoal),
-    var(--burgundy)
+    var(--blue),
+    var(--dark)
   );
 }
 
 .gallery-slide:nth-child(3) .photo-placeholder {
   background: linear-gradient(
     135deg,
-    var(--amber),
-    var(--olive)
+    var(--green-light),
+    var(--green)
   );
 }
 
 .gallery-slide:nth-child(4) .photo-placeholder {
   background: linear-gradient(
     135deg,
-    var(--burgundy),
-    var(--charcoal)
+    var(--blue-light),
+    var(--blue)
   );
-}
-
-.photo-placeholder span {
-  color: var(--cream);
-  font-size: 12px;
-  letter-spacing: 2px;
 }
 
 
 /* =========================================
-   GALLERY NAVIGATION
+   GALLERY FOOTER
    ========================================= */
-
-.gallery-arrow {
-  position: absolute;
-  z-index: 2;
-
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 43px;
-  height: 43px;
-
-  border: 0;
-  border-radius: 50%;
-
-  background: var(--cream);
-  color: var(--charcoal);
-
-  cursor: pointer;
-  font-size: 20px;
-
-  transition: background 0.2s, color 0.2s;
-}
-
-.gallery-arrow:hover {
-  background: var(--burgundy);
-  color: var(--cream);
-}
-
-.gallery-prev {
-  left: 18px;
-}
-
-.gallery-next {
-  right: 18px;
-}
 
 .gallery-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
 
-  margin-top: 15px;
+  margin-top: 14px;
 
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 600;
   letter-spacing: 1.5px;
-  font-weight: bold;
-  opacity: 0.65;
+
+  color: var(--muted);
 }
 
 
 /* =========================================
-   GENERAL SECTION SPACING
+   SECTION SPACING
    ========================================= */
 
 .section-padding {
-  padding: clamp(65px, 9vw, 100px) var(--page-padding);
+  padding: clamp(75px, 9vw, 125px) var(--page-padding);
 }
 
 
@@ -325,7 +297,7 @@ footer {
    ========================================= */
 
 .about {
-  background: #e8dfcc;
+  background: var(--surface);
 }
 
 .about-content {
@@ -335,10 +307,10 @@ footer {
     minmax(0, 1.1fr)
     minmax(0, 0.9fr);
 
-  gap: 9%;
   align-items: center;
+  gap: 8%;
 
-  padding: 40px 0;
+  padding: 35px 0;
 }
 
 .about-heading,
@@ -348,22 +320,29 @@ footer {
 
 .eyebrow {
   display: block;
-  margin-bottom: 25px;
 
-  font-size: 10px;
-  font-weight: bold;
+  margin-bottom: 28px;
+
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 1.8px;
 
-  color: var(--burgundy);
+  color: var(--green);
 }
 
 .about-heading h1 {
   font-family: var(--font-display);
+  font-weight: 800;
 
-  font-size: clamp(42px, 7vw, 100px);
-  line-height: 0.98;
-  letter-spacing: -0.07em;
-  font-weight: 900;
+  font-size: clamp(48px, 7.2vw, 105px);
+  line-height: 0.99;
+  letter-spacing: -0.075em;
+
+  overflow-wrap: normal;
+}
+
+.about-heading h1 span {
+  color: var(--blue);
 }
 
 .about-text {
@@ -374,9 +353,9 @@ footer {
   font-size: 15px;
   line-height: 1.9;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
-  color: #55534a;
+  color: #48534b;
 }
 
 
@@ -385,8 +364,8 @@ footer {
    ========================================= */
 
 .booking {
-  background: var(--charcoal);
-  color: var(--cream);
+  background: var(--green);
+  color: var(--white);
 
   text-align: center;
 }
@@ -396,11 +375,11 @@ footer {
   max-width: 650px;
   min-width: 0;
 
-  margin: 20px auto;
+  margin: 0 auto;
 }
 
 .booking-content .eyebrow {
-  color: var(--amber);
+  color: var(--green-light);
 }
 
 .booking-content h2 {
@@ -408,56 +387,57 @@ footer {
   max-width: 100%;
 
   font-family: var(--font-display);
+  font-weight: 800;
 
-  /* Prevent DISTRACTED from overflowing */
-  font-size: clamp(32px, 11vw, 115px);
+  font-size: clamp(48px, 10vw, 100px);
   line-height: 1;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.075em;
 
-  font-weight: 900;
-  white-space: nowrap;
+  overflow-wrap: normal;
 
   margin: 0 auto 30px;
 }
 
 .booking-content h2 span {
-  color: var(--amber);
+  color: var(--blue-light);
 }
 
 .booking-content p {
-  width: 100%;
-  max-width: 490px;
+  max-width: 450px;
 
   margin: 0 auto 35px;
 
   font-size: 15px;
-  line-height: 1.9;
+  line-height: 1.8;
 
-  color: #c5c0b3;
+  color: #e1ebe1;
 }
 
 .booking-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+
+  padding: 19px 35px;
 
   max-width: 100%;
 
-  padding: 19px 27px;
+  background: var(--blue-light);
+  color: var(--dark);
 
-  background: var(--amber);
-  color: var(--charcoal);
-
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 1.8px;
 
-  transition: background 0.2s, transform 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
 }
 
 .booking-button:hover {
-  background: var(--cream);
+  background: var(--white);
+  color: var(--blue);
   transform: translateY(-3px);
 }
 
@@ -467,7 +447,7 @@ footer {
    ========================================= */
 
 .socials {
-  background: var(--cream);
+  background: var(--background);
 }
 
 .social-links {
@@ -480,27 +460,30 @@ footer {
 
 .social-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 15px;
 
-  padding: 28px 0;
+  width: fit-content;
+  max-width: 100%;
 
-  border-bottom: 1px solid #c9c0ad;
+  padding: 24px 0;
 
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1.8px;
+  border-bottom: 1px solid #bdc9be;
+
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
 
   transition: color 0.2s;
 }
 
 .social-link:first-child {
-  border-top: 1px solid #c9c0ad;
+  border-top: 1px solid #bdc9be;
 }
 
 .social-link:hover {
-  color: var(--burgundy);
+  color: var(--blue);
 }
 
 
@@ -520,16 +503,17 @@ footer {
   flex-wrap: wrap;
   gap: 20px;
 
-  background: #e8dfcc;
-
-  font-size: 9px;
-  letter-spacing: 1px;
-  font-weight: bold;
+  background: var(--surface);
 }
 
 .footer-wordmark {
-  font-size: 22px;
-  letter-spacing: -0.07em;
+  font-size: 27px;
+}
+
+.site-footer span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 
@@ -544,7 +528,7 @@ footer {
   }
 
   .about-heading h1 {
-    font-size: clamp(42px, 7vw, 70px);
+    font-size: clamp(48px, 7vw, 72px);
   }
 
 }
@@ -561,37 +545,39 @@ footer {
   }
 
   .site-header {
-    height: 80px;
+    height: 82px;
+  }
+
+  .wordmark {
+    font-size: 34px;
+  }
+
+  .header-link {
+    font-size: 13px;
   }
 
   .hero {
-    padding-top: 10px;
+    padding-top: 5px;
     padding-bottom: 45px;
   }
 
   .gallery-slide {
-    flex-basis: 88%;
+    flex-basis: 90%;
     height: clamp(340px, 115vw, 500px);
   }
 
-  .gallery-arrow {
-    display: none;
-  }
-
   .gallery-footer {
-    font-size: 8px;
-    letter-spacing: 1px;
+    font-size: 9px;
   }
 
   .about-content {
     grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
-    padding: 30px 0;
+    gap: 38px;
+    padding: 20px 0;
   }
 
   .about-heading h1 {
-    font-size: clamp(48px, 12vw, 75px);
-    letter-spacing: -0.07em;
+    font-size: clamp(48px, 12vw, 78px);
   }
 
   .about-text p {
@@ -599,13 +585,8 @@ footer {
     line-height: 1.85;
   }
 
-  .booking-content {
-    margin: 15px auto;
-  }
-
   .booking-content h2 {
-    font-size: clamp(32px, 11vw, 70px);
-    letter-spacing: -0.065em;
+    font-size: clamp(48px, 11vw, 76px);
   }
 
   .booking-content p {
@@ -613,15 +594,17 @@ footer {
   }
 
   .social-link {
-    font-size: 10px;
-    padding: 24px 0;
+    font-size: 26px;
+    padding: 22px 0;
   }
 
   .site-footer {
     flex-direction: column;
+    justify-content: center;
     text-align: center;
+
     padding: 35px 20px;
-    gap: 15px;
+    gap: 18px;
   }
 
 }
@@ -638,11 +621,11 @@ footer {
   }
 
   .wordmark {
-    font-size: 25px;
+    font-size: 29px;
   }
 
   .header-link {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .gallery-slide {
@@ -654,12 +637,11 @@ footer {
   }
 
   .booking-content h2 {
-    font-size: 32px;
-    letter-spacing: -0.06em;
+    font-size: clamp(42px, 12vw, 48px);
   }
 
   .gallery-footer {
-    font-size: 7px;
+    font-size: 8px;
   }
 
 }
